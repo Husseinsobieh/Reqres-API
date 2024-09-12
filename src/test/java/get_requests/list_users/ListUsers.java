@@ -22,16 +22,16 @@ public class ListUsers extends BaseTests {
     @Test(dataProviderClass = ListUsersProvider.class, dataProvider = "getUsers")
     public void testListUsers(int ID, String email, String firstName, String lastName, String avatar){
         given().
-                spec(request).
-                when().
-                get("/api/users?page=1").
-                then().
-                spec(response).
-                assertThat().
-                body("data[" + (ID-1) + "].id", equalTo(ID)).
-                body("data[" + (ID-1) + "].email", equalTo(email)).
-                body("data[" + (ID-1) + "].first_name", equalTo(firstName)).
-                body("data[" + (ID-1) + "].last_name", equalTo(lastName)).
-                body("data[" + (ID-1) + "].avatar", equalTo(avatar));
+            spec(request).
+        when().
+            get("/api/users?page=1").
+        then().
+            spec(response).
+            assertThat().
+            body("data[" + (ID-1) + "].id", equalTo(ID)).
+            body("data[" + (ID-1) + "].email", equalTo(email)).
+            body("data[" + (ID-1) + "].first_name", equalTo(firstName)).
+            body("data[" + (ID-1) + "].last_name", equalTo(lastName)).
+            body("data[" + (ID-1) + "].avatar", equalTo(avatar));
     }
 }
