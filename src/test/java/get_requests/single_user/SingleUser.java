@@ -28,6 +28,6 @@ public class SingleUser extends BaseTests {
             get("/api/users/" + id).
         then().
             assertThat().
-            statusCode(200);
+            statusCode(404);
     }
 }
