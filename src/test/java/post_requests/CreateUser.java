@@ -1,15 +1,12 @@
 package post_requests;
 
 import base.BaseTests;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
+import utils.User;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.with;
 import static org.hamcrest.Matchers.equalTo;
 
 public class CreateUser extends BaseTests {
@@ -23,12 +20,13 @@ public class CreateUser extends BaseTests {
                 spec(request).
                 header("Content-Type", "application/json").
                 body(user).
-                log().body().
         when().
             post("/api/users").
         then().
             assertThat().statusCode(201).
+            assertThat().body("name", equalTo("Hussein"),
+                        "job", equalTo("Dentist"),
+                        "age", equalTo(23)).
             log().all();
     }
-
 }
