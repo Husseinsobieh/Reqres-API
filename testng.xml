@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Arthur/Desktop/7s/Java/Learning/Reqres-API-Project/src/test/java">
+        <classes>
+            <class name="delete_requests.DeleteUser">
+                <methods>
+                    <include name="deleteUser"/>
+                </methods>
+            </class>
+            <class name="get_requests.list_users.ListUsers">
+                <methods>
+                    <include name="testListUsersNumber"/>
+                    <include name="testListUsers"/>
+                </methods>
+            </class>
+            <class name="get_requests.single_user.SingleUser">
+                <methods>
+                    <include name="getSingleUser"/>
+                    <include name="getSingleUserNotFound"/>
+                </methods>
+            </class>
+            <class name="patch_requests.UpdatePatch">
+                <methods>
+                    <include name="patchUser"/>
+                </methods>
+            </class>
+            <class name="post_requests.CreateUser">
+                <methods>
+                    <include name="createUser"/>
+                </methods>
+            </class>
+            <class name="post_requests.LoginUser">
+                <methods>
+                    <include name="loginUser"/>
+                    <include name="loginIncompleteUser"/>
+                </methods>
+            </class>
+            <class name="post_requests.RegisterUser">
+                <methods>
+                    <include name="registerUser"/>
+                    <include name="registerIncompleteUser"/>
+                </methods>
+            </class>
+            <class name="put_requests.UpdatePut">
+                <methods>
+                    <include name="putUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
